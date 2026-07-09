@@ -49,7 +49,7 @@ Double-click, in order:
 2. `2-start-jira-backend.bat` — starts the backend, pointed at Fly.io. Leave this window open. Wait for `Jira assistant ready...`.
 3. `3-open-jira-hub.bat` — opens the hub page at `http://localhost:8090`. Click the **Jira** card, type a question, press **Ask**.
 
-### Option B: Local
+### Option B: RUN THE MCP SERVER LOCAL -** Local
 
 Double-click, in order:
 

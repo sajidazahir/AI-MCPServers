@@ -1,6 +1,9 @@
 @echo off
-REM Step 1 of 3 - compiles jira-ollama-client (the web backend + CLI).
-REM Run this first, and again any time you change its source code.
+REM Step 1 - compiles jira-ollama-client (the web backend). Run this first
+REM (either option below needs it), and again any time you change its source.
+
+title JIRA CLIENT - BUILD
+color 0F
 
 cd /d "%~dp0jira-ollama-client"
 call mvn -q -B clean package -DskipTests
