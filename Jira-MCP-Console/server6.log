@@ -1,0 +1,50 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.2)
+
+2026-07-05T08:04:18.306-05:00  INFO 20000 --- [           main] c.e.jiramcp.JiraMcpServerApplication     : Starting JiraMcpServerApplication v0.1.0 using Java 21.0.7 with PID 20000 (C:\00-Sajida\VS-WS-Jira-MCP-Test\jira-mcp-server\target\jira-mcp-server-0.1.0.jar started by sajid in C:\00-Sajida\VS-WS-Jira-MCP-Test\jira-mcp-server)
+2026-07-05T08:04:18.375-05:00  INFO 20000 --- [           main] c.e.jiramcp.JiraMcpServerApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-05T08:04:22.103-05:00  WARN 20000 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-05T08:04:22.107-05:00  WARN 20000 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-05T08:04:22.175-05:00  WARN 20000 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-05T08:04:23.476-05:00  INFO 20000 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-07-05T08:04:23.539-05:00  INFO 20000 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-05T08:04:23.541-05:00  INFO 20000 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-07-05T08:04:23.666-05:00  INFO 20000 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4794 ms
+2026-07-05T08:04:25.905-05:00 DEBUG 20000 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2026-07-05T08:04:26.238-05:00 DEBUG 20000 --- [           main] o.s.w.s.f.support.RouterFunctionMapping  : 1 RouterFunction(s) in 'routerFunctionMapping'
+2026-07-05T08:04:26.335-05:00 DEBUG 20000 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-07-05T08:04:27.587-05:00 DEBUG 20000 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-07-05T08:04:28.318-05:00 DEBUG 20000 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-07-05T08:04:28.408-05:00  INFO 20000 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-07-05T08:04:30.574-05:00  INFO 20000 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 8
+2026-07-05T08:04:30.574-05:00  INFO 20000 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-07-05T08:04:30.604-05:00  INFO 20000 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-07-05T08:04:30.656-05:00  INFO 20000 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-07-05T08:04:30.826-05:00  INFO 20000 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-07-05T08:04:32.714-05:00  INFO 20000 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-07-05T08:04:32.905-05:00  INFO 20000 --- [           main] c.e.jiramcp.JiraMcpServerApplication     : Started JiraMcpServerApplication in 17.288 seconds (process running for 21.164)
+2026-07-05T08:04:48.754-05:00  INFO 20000 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-05T08:04:48.755-05:00  INFO 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-05T08:04:48.755-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-07-05T08:04:48.755-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-07-05T08:04:48.757-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1a4c0ad1
+2026-07-05T08:04:48.758-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@267d4a3c
+2026-07-05T08:04:48.764-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-07-05T08:04:48.764-05:00  INFO 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2026-07-05T08:04:48.834-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/mcp", parameters={}
+2026-07-05T08:04:48.989-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2026-07-05T08:04:49.040-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2026-07-05T08:04:49.083-05:00 DEBUG 20000 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource mcp for request '/mcp'.]
+2026-07-05T08:04:49.105-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2026-07-05T08:04:49.151-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2026-07-05T08:04:49.170-05:00 DEBUG 20000 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.webmvc.autoconfigure.error.BasicErrorController#error(HttpServletRequest)
+2026-07-05T08:04:49.325-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/event-stream] and supported [application/json, application/*+json, application/yaml]
+2026-07-05T08:04:49.342-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Jul 05 08:04:49 CDT 2026, status=404, error=Not Found, path=/mcp}]
+2026-07-05T08:04:49.502-05:00 DEBUG 20000 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404

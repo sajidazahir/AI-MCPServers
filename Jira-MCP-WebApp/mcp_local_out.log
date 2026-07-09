@@ -1,0 +1,32 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.2)
+
+2026-07-08T22:20:10.422-05:00  INFO 33208 --- [jira-mcp-server] [           main] c.e.jiramcp.JiraMcpServerApplication     : Starting JiraMcpServerApplication v0.1.0 using Java 21.0.7 with PID 33208 (C:\00-Sajida\VS-WS-AI-MCPServer\Jira-MCP-WebApp\jira-mcp-server\target\jira-mcp-server-0.1.0.jar started by sajid in C:\00-Sajida\VS-WS-AI-MCPServer\Jira-MCP-WebApp\jira-mcp-server)
+2026-07-08T22:20:10.451-05:00 DEBUG 33208 --- [jira-mcp-server] [           main] c.e.jiramcp.JiraMcpServerApplication     : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-07-08T22:20:10.454-05:00  INFO 33208 --- [jira-mcp-server] [           main] c.e.jiramcp.JiraMcpServerApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-08T22:20:12.668-05:00  WARN 33208 --- [jira-mcp-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-08T22:20:12.672-05:00  WARN 33208 --- [jira-mcp-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-08T22:20:12.693-05:00  WARN 33208 --- [jira-mcp-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-08T22:20:13.211-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-07-08T22:20:13.235-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-08T22:20:13.235-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-07-08T22:20:13.279-05:00  INFO 33208 --- [jira-mcp-server] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2576 ms
+2026-07-08T22:20:17.131-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-07-08T22:20:17.669-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 8
+2026-07-08T22:20:17.669-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-07-08T22:20:17.676-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-07-08T22:20:17.681-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-07-08T22:20:17.687-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-07-08T22:20:18.163-05:00  INFO 33208 --- [jira-mcp-server] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-07-08T22:20:18.212-05:00  INFO 33208 --- [jira-mcp-server] [           main] c.e.jiramcp.JiraMcpServerApplication     : Started JiraMcpServerApplication in 8.859 seconds (process running for 10.219)
+2026-07-08T22:22:14.508-05:00  INFO 33208 --- [jira-mcp-server] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-08T22:22:14.509-05:00  INFO 33208 --- [jira-mcp-server] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-08T22:22:14.514-05:00  INFO 33208 --- [jira-mcp-server] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-07-08T22:22:16.194-05:00  INFO 33208 --- [jira-mcp-server] [nio-8080-exec-3] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2025-11-25, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - jira, title=jira, version=1.0.0, description=null, icons=null, websiteUrl=null]

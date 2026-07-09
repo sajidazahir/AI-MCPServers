@@ -1,0 +1,47 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: jira-mcp-server
+  web:
+    resources:
+      add-mappings: false
+  mvc:
+    static-path-pattern: /static/**
+  ai:
+    mcp:
+      server:
+        name: jira-mcp-server
+        version: 0.1.0
+        type: SYNC
+        protocol: STREAMABLE
+        annotation-scanner:
+          enabled: true
+
+jira:
+  base-url: ${JIRA_BASE_URL:}
+  email: ${JIRA_EMAIL:}
+  api-token: ${JIRA_API_TOKEN:}
+
+spring.security.oauth2.authorizationserver:
+  issuer: ${PUBLIC_URL:}
+  client:
+    jira-ollama-client:
+      registration:
+        client-id: jira-ollama-client
+        client-secret: "{noop}${OAUTH_CLIENT_SECRET:}"
+        client-authentication-methods:
+          - client_secret_basic
+        authorization-grant-types:
+          - client_credentials
+        scopes:
+          - mcp.tools
+
+spring.security.oauth2.resourceserver:
+  jwt:
+    issuer-uri: ${PUBLIC_URL:}
+
+logging:
+  level:
+    com.example.jiramcp: DEBUG

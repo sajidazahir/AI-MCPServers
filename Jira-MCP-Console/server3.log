@@ -1,0 +1,30 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.2)
+
+2026-07-05T08:00:17.826-05:00  INFO 19180 --- [           main] c.e.jiramcp.JiraMcpServerApplication     : Starting JiraMcpServerApplication v0.1.0 using Java 21.0.7 with PID 19180 (C:\00-Sajida\VS-WS-Jira-MCP-Test\jira-mcp-server\target\jira-mcp-server-0.1.0.jar started by sajid in C:\00-Sajida\VS-WS-Jira-MCP-Test\jira-mcp-server)
+2026-07-05T08:00:17.868-05:00  INFO 19180 --- [           main] c.e.jiramcp.JiraMcpServerApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-07-05T08:00:22.439-05:00  WARN 19180 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-05T08:00:22.444-05:00  WARN 19180 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-05T08:00:22.540-05:00  WARN 19180 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-05T08:00:24.059-05:00  INFO 19180 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-07-05T08:00:24.129-05:00  INFO 19180 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-05T08:00:24.130-05:00  INFO 19180 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-07-05T08:00:24.329-05:00  INFO 19180 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6018 ms
+2026-07-05T08:00:28.461-05:00  INFO 19180 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-07-05T08:00:29.329-05:00  INFO 19180 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 8
+2026-07-05T08:00:29.330-05:00  INFO 19180 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-07-05T08:00:29.345-05:00  INFO 19180 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-07-05T08:00:29.351-05:00  INFO 19180 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-07-05T08:00:29.359-05:00  INFO 19180 --- [           main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-07-05T08:00:30.566-05:00  INFO 19180 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-07-05T08:00:30.851-05:00  INFO 19180 --- [           main] c.e.jiramcp.JiraMcpServerApplication     : Started JiraMcpServerApplication in 16.0 seconds (process running for 20.116)
+2026-07-05T08:00:31.783-05:00  INFO 19180 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-05T08:00:31.783-05:00  INFO 19180 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-05T08:00:31.787-05:00  INFO 19180 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Console Hub</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --panel: #ffffff;
+    --border: #e0e2e7;
+    --text: #1b1e24;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent-text: #ffffff;
+    --ok: #16a34a;
+    --err: #dc2626;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --panel: #1d2027;
+      --border: #2c303a;
+      --text: #e7e9ee;
+      --muted: #9099a8;
+      --accent: #3b82f6;
+      --accent-text: #ffffff;
+      --ok: #4ade80;
+      --err: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem 1.5rem 4rem;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+  .subtitle { color: var(--muted); margin: 0 0 2rem; font-size: .95rem; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: border-color .15s ease, transform .1s ease;
+    position: relative;
+  }
+  .card:hover:not(.disabled) { border-color: var(--accent); }
+  .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .card.disabled { cursor: default; opacity: .55; }
+
+  .card-title { font-weight: 600; font-size: 1.05rem; display: flex; align-items: center; gap: .5rem; }
+  .card-desc { color: var(--muted); font-size: .85rem; margin-top: .35rem; }
+
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--muted);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .status-dot.ok { background: var(--ok); }
+  .status-dot.err { background: var(--err); }
+
+  .badge {
+    font-size: .7rem;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--border);
+    color: var(--muted);
+    margin-left: auto;
+  }
+
+  .panel {
+    margin-top: 1.5rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: none;
+  }
+  .panel.open { display: block; }
+
+  .panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .panel-header h2 { font-size: 1.05rem; margin: 0; }
+  .hint { color: var(--muted); font-size: .82rem; }
+
+  .ask-row { display: flex; gap: .5rem; }
+  input[type="text"] {
+    flex: 1;
+    padding: .6rem .75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: .95rem;
+  }
+  input[type="text"]:focus { outline: none; border-color: var(--accent); }
+
+  button {
+    padding: .6rem 1.1rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: .95rem;
+    cursor: pointer;
+  }
+  button:disabled { opacity: .6; cursor: default; }
+
+  .log { margin-top: 1.25rem; display: flex; flex-direction: column; gap: .9rem; }
+  .entry-q { font-weight: 600; }
+  .entry-a { white-space: pre-wrap; color: var(--text); margin-top: .3rem; line-height: 1.5; }
+  .entry-a.error { color: var(--err); }
+  .entry-a.loading { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>MCP Console Hub</h1>
+  <p class="subtitle">Pick a project to ask it questions.</p>
+
+  <div class="cards">
+    <div class="card" id="card-jira">
+      <div class="card-title">
+        <span class="status-dot" id="jira-status-dot"></span>
+        Jira
+      </div>
+      <div class="card-desc" id="jira-status-text">Checking backend&hellip;</div>
+    </div>
+
+    <div class="card disabled" id="card-github">
+      <div class="card-title">
+        GitHub
+        <span class="badge">coming soon</span>
+      </div>
+      <div class="card-desc">Not connected yet.</div>
+    </div>
+  </div>
+
+  <div class="panel" id="jira-panel">
+    <div class="panel-header">
+      <h2>Ask Jira</h2>
+      <span class="hint">via jira-ollama-client</span>
+    </div>
+
+    <div class="ask-row">
+      <input type="text" id="jira-question" placeholder="e.g. What projects exist in Jira?" autocomplete="off">
+      <button id="jira-ask-btn">Ask</button>
+    </div>
+
+    <div class="log" id="jira-log"></div>
+  </div>
+</div>
+
+<script>
+  const jiraCard = document.getElementById("card-jira");
+  const jiraPanel = document.getElementById("jira-panel");
+  const statusDot = document.getElementById("jira-status-dot");
+  const statusText = document.getElementById("jira-status-text");
+  const questionInput = document.getElementById("jira-question");
+  const askBtn = document.getElementById("jira-ask-btn");
+  const log = document.getElementById("jira-log");
+
+  let backendUp = false;
+
+  async function checkHealth() {
+    try {
+      const res = await fetch("/api/health", { method: "GET" });
+      backendUp = res.ok;
+    } catch {
+      backendUp = false;
+    }
+    statusDot.className = "status-dot " + (backendUp ? "ok" : "err");
+    statusText.textContent = backendUp
+      ? "Backend connected"
+      : "Backend not reachable — restart 2-start-jira-backend.bat";
+  }
+
+  jiraCard.addEventListener("click", () => {
+    jiraCard.classList.add("active");
+    jiraPanel.classList.add("open");
+    questionInput.focus();
+  });
+
+  async function ask() {
+    const question = questionInput.value.trim();
+    if (!question) return;
+
+    const entry = document.createElement("div");
+    const answerId = "a" + Date.now();
+    entry.innerHTML = `<div class="entry-q"></div><div class="entry-a loading" id="${answerId}">Thinking&hellip;</div>`;
+    entry.querySelector(".entry-q").textContent = question;
+    log.prepend(entry);
+
+    questionInput.value = "";
+    askBtn.disabled = true;
+
+    const answerEl = document.getElementById(answerId);
+    try {
+      const res = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
+      });
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        throw new Error(`Server returned ${res.status}${body ? ": " + body : ""}`);
+      }
+      const data = await res.json();
+      answerEl.textContent = data.answer;
+      answerEl.classList.remove("loading");
+    } catch (err) {
+      answerEl.textContent = "Error: " + err.message;
+      answerEl.classList.remove("loading");
+      answerEl.classList.add("error");
+    } finally {
+      askBtn.disabled = false;
+    }
+  }
+
+  askBtn.addEventListener("click", ask);
+  questionInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") ask();
+  });
+
+  checkHealth();
+  setInterval(checkHealth, 10000);
+</script>
+</body>
+</html>
